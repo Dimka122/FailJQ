@@ -17,27 +17,27 @@ namespace Notes.Controllers
             new() { Title = "Tom", Content = "Tom", Token_id = "Tom" },
         };
 
-        [HttpGet]
-        public IEnumerable<Not> GetNot()
-        {
-            IEnumerable<Not> nots = null;
-            using (IDbConnection db = new SqlConnection("Data Source = (localdb)/MSSQLLocalDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
-            {
-                nots = db.GetAll<Not>();
-            }
-            return nots;
-        }
-        [HttpGet("{apiNotId}")]
-        public Not? GetNotById(int id)
-        {
-            Not? not = null;
-            using (IDbConnection db = new SqlConnection("Data Source = (localdb)/MSSQLLocalDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"))
-            {
-                not = db.Get<Not>(id);
-            }
-            return not;
+        //[HttpGet]
+        //public IEnumerable<Not> GetNot()
+        //{
+        //    IEnumerable<Not> nots = null;
+        //    using (IDbConnection db = new SqlConnection("Data Source = (localdb)/MSSQLLocalDB; Integrated Security = True;"))
+        //    {
+        //        nots = db.GetAll<Not>();
+        //    }
+        //    return nots;
+        //}
+        //[HttpGet("{apiNotId}")]
+        //public Not? GetNotById(int id)
+        //{
+        //    Not? not = null;
+        //    using (IDbConnection db = new SqlConnection("Data Source = (localdb)/MSSQLLocalDB; Integrated Security = True;"))
+        //    {
+        //        not = db.Get<Not>(id);
+        //    }
+        //    return not;
 
-        }
+        //}
 
 
     }

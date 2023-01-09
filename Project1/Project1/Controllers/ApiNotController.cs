@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 
 namespace Notes.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class ApiNotController : Controller
     {
         List<Not> nots = new List<Not>
@@ -17,15 +19,19 @@ namespace Notes.Controllers
             new() { Title = "Tom", Content = "Tom", Token_id = "Tom" },
         };
 
-        //[HttpGet]
-        //public IEnumerable<Not> GetNot()
-        //{
-        //    IEnumerable<Not> nots = null;
-        //    using (IDbConnection db = new SqlConnection("Data Source = (localdb)/MSSQLLocalDB; Integrated Security = True;"))
+        //    [HttpGet]
+        //    public IEnumerator<Not> Nots()
         //    {
-        //        nots = db.GetAll<Not>();
+        //        get
+        //        {
+        //            IEnumerable<Not> nots = null;
+        //            //using (IDbConnection db = new SqlConnection("Data Source = (localdb)/MSSQLLocalDB; Integrated Security = True;"))
+        //            {
+        //                nots = (IEnumerable<Not>?)nots.GetType();
+        //            }
+        //            return (IEnumerator<Not>)nots;
+        //        }
         //    }
-        //    return nots;
         //}
         //[HttpGet("{apiNotId}")]
         //public Not? GetNotById(int id)
